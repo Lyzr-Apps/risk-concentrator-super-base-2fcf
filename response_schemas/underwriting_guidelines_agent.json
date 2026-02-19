@@ -1,0 +1,53 @@
+{
+  "agent_id": "6996d52fd9786499c59b72e6",
+  "agent_name": "Underwriting Guidelines Agent",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "GuidelinesResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "geography": {"type": "string"},
+          "applicable_guidelines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "guideline_name": {"type": "string"},
+                "description": {"type": "string"},
+                "threshold_amber": {"type": "string"},
+                "threshold_red": {"type": "string"}
+              },
+              "required": ["guideline_name", "description", "threshold_amber", "threshold_red"],
+              "additionalProperties": false
+            }
+          },
+          "historical_losses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "event_name": {"type": "string"},
+                "year": {"type": "string"},
+                "loss_amount": {"type": "string"},
+                "impact_description": {"type": "string"}
+              },
+              "required": ["event_name", "year", "loss_amount", "impact_description"],
+              "additionalProperties": false
+            }
+          },
+          "risk_appetite_status": {"type": "string"},
+          "max_concentration_limit": {"type": "string"},
+          "benchmark_notes": {"type": "string"}
+        },
+        "required": ["geography", "applicable_guidelines", "historical_losses", "risk_appetite_status", "max_concentration_limit", "benchmark_notes"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

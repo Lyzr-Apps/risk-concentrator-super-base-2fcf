@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {"id": "input_node", "type": "Input", "label": "Underwriter Query", "nodeCategory": "input"},
+    {"id": "manager_agent", "type": "Agent", "label": "Risk Intelligence Coordinator", "nodeCategory": "agent", "agent_id": "6996d54a0970b3a6e013d02e"},
+    {"id": "exposure_agent", "type": "Agent", "label": "Exposure Data Agent", "nodeCategory": "agent", "agent_id": "6996d52e9c31ef52445780e5"},
+    {"id": "guidelines_agent", "type": "Agent", "label": "Underwriting Guidelines Agent", "nodeCategory": "agent", "agent_id": "6996d52fd9786499c59b72e6"},
+    {"id": "catastrophe_agent", "type": "Agent", "label": "Catastrophe Intel Agent", "nodeCategory": "agent", "agent_id": "6996d52ff5839f3b10ef9ccd"},
+    {"id": "output_node", "type": "Output", "label": "Risk Concentration Briefing", "nodeCategory": "end"}
+  ],
+  "edges": [
+    {"source": "input_node", "target": "manager_agent"},
+    {"source": "manager_agent", "target": "exposure_agent"},
+    {"source": "manager_agent", "target": "guidelines_agent"},
+    {"source": "manager_agent", "target": "catastrophe_agent"},
+    {"source": "exposure_agent", "target": "output_node"},
+    {"source": "guidelines_agent", "target": "output_node"},
+    {"source": "catastrophe_agent", "target": "output_node"}
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "agent_name": "Risk Intelligence Coordinator",
+  "agent_id": "6996d54a0970b3a6e013d02e",
+  "description": "Coordinates sub-agents to fetch exposure data, underwriting guidelines, and real-time catastrophe intelligence; aggregates results into a unified risk concentration assessment with severity classification and remedial action recommendations",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "severity_level": "string",
+    "geography": "string",
+    "briefing_summary": "string",
+    "exposure_summary": {
+      "total_policies": "number",
+      "total_insured_value": "string",
+      "concentration_score": "number",
+      "yoy_growth": "string"
+    },
+    "lob_breakdown": [
+      {
+        "line_of_business": "string",
+        "percentage": "number",
+        "insured_value": "string"
+      }
+    ],
+    "intermediary_concentration": [
+      {
+        "name": "string",
+        "percentage": "number"
+      }
+    ],
+    "threshold_breaches": [
+      {
+        "metric": "string",
+        "current_value": "string",
+        "threshold": "string",
+        "status": "string"
+      }
+    ],
+    "current_threats": [
+      {
+        "threat_name": "string",
+        "severity": "string",
+        "description": "string"
+      }
+    ],
+    "remedial_actions": [
+      {
+        "priority": "number",
+        "action": "string",
+        "rationale": "string",
+        "urgency": "string"
+      }
+    ],
+    "historical_context": "string",
+    "risk_appetite_status": "string",
+    "analysis_timestamp": "string"
+  },
+  "example_response": {
+    "severity_level": "sample string",
+    "geography": "sample string",
+    "briefing_summary": "sample string",
+    "exposure_summary": {
+      "total_policies": 0,
+      "total_insured_value": "sample string",
+      "concentration_score": 0,
+      "yoy_growth": "sample string"
+    },
+    "lob_breakdown": [
+      {
+        "line_of_business": "sample string",
+        "percentage": 0,
+        "insured_value": "sample string"
+      }
+    ],
+    "intermediary_concentration": [
+      {
+        "name": "sample string",
+        "percentage": 0
+      }
+    ],
+    "threshold_breaches": [
+      {
+        "metric": "sample string",
+        "current_value": "sample string",
+        "threshold": "sample string",
+        "status": "sample string"
+      }
+    ],
+    "current_threats": [
+      {
+        "threat_name": "sample string",
+        "severity": "sample string",
+        "description": "sample string"
+      }
+    ],
+    "remedial_actions": [
+      {
+        "priority": 0,
+        "action": "sample string",
+        "rationale": "sample string",
+        "urgency": "sample string"
+      }
+    ],
+    "historical_context": "sample string",
+    "risk_appetite_status": "sample string",
+    "analysis_timestamp": "sample string"
+  }
+}

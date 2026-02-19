@@ -1,0 +1,27 @@
+{
+  "agents": {
+    "risk_intelligence_coordinator": {
+      "agent_id": "6996d54a0970b3a6e013d02e",
+      "type": "manager"
+    },
+    "exposure_data_agent": {
+      "agent_id": "6996d52e9c31ef52445780e5",
+      "type": "sub-agent"
+    },
+    "underwriting_guidelines_agent": {
+      "agent_id": "6996d52fd9786499c59b72e6",
+      "type": "sub-agent",
+      "rag_id": "6996d500e12ce168202cfbaa"
+    },
+    "catastrophe_intel_agent": {
+      "agent_id": "6996d52ff5839f3b10ef9ccd",
+      "type": "sub-agent"
+    }
+  },
+  "knowledge_bases": {
+    "underwriting_kb": {
+      "rag_id": "6996d500e12ce168202cfbaa",
+      "name": "CatRisk Underwriting Knowledge Base"
+    }
+  }
+}

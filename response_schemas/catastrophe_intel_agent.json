@@ -1,0 +1,67 @@
+{
+  "agent_id": "6996d52ff5839f3b10ef9ccd",
+  "agent_name": "Catastrophe Intel Agent",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "CatastropheIntelResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "geography": {"type": "string"},
+          "current_threats": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "threat_name": {"type": "string"},
+                "threat_type": {"type": "string"},
+                "severity": {"type": "string"},
+                "description": {"type": "string"},
+                "source": {"type": "string"}
+              },
+              "required": ["threat_name", "threat_type", "severity", "description", "source"],
+              "additionalProperties": false
+            }
+          },
+          "recent_events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "event_name": {"type": "string"},
+                "date": {"type": "string"},
+                "estimated_loss": {"type": "string"},
+                "description": {"type": "string"}
+              },
+              "required": ["event_name", "date", "estimated_loss", "description"],
+              "additionalProperties": false
+            }
+          },
+          "climate_trends": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "trend_name": {"type": "string"},
+                "direction": {"type": "string"},
+                "impact": {"type": "string"}
+              },
+              "required": ["trend_name", "direction", "impact"],
+              "additionalProperties": false
+            }
+          },
+          "threat_level": {"type": "string"},
+          "threat_justification": {"type": "string"},
+          "data_timestamp": {"type": "string"}
+        },
+        "required": ["geography", "current_threats", "recent_events", "climate_trends", "threat_level", "threat_justification", "data_timestamp"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

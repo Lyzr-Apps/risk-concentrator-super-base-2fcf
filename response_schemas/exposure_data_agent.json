@@ -1,0 +1,54 @@
+{
+  "agent_id": "6996d52e9c31ef52445780e5",
+  "agent_name": "Exposure Data Agent",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "ExposureDataResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "geography": {"type": "string"},
+          "total_policies": {"type": "number"},
+          "total_insured_value": {"type": "string"},
+          "lob_breakdown": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "line_of_business": {"type": "string"},
+                "policy_count": {"type": "number"},
+                "insured_value": {"type": "string"},
+                "percentage": {"type": "number"}
+              },
+              "required": ["line_of_business", "policy_count", "insured_value", "percentage"],
+              "additionalProperties": false
+            }
+          },
+          "top_intermediaries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "percentage": {"type": "number"},
+                "policy_count": {"type": "number"}
+              },
+              "required": ["name", "percentage", "policy_count"],
+              "additionalProperties": false
+            }
+          },
+          "yoy_growth": {"type": "string"},
+          "concentration_score": {"type": "number"},
+          "risk_notes": {"type": "string"}
+        },
+        "required": ["geography", "total_policies", "total_insured_value", "lob_breakdown", "top_intermediaries", "yoy_growth", "concentration_score", "risk_notes"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

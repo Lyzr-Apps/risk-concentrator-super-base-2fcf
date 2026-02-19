@@ -1,0 +1,104 @@
+{
+  "agent_id": "6996d54a0970b3a6e013d02e",
+  "agent_name": "Risk Intelligence Coordinator",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "RiskConcentrationBriefing",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "severity_level": {"type": "string"},
+          "geography": {"type": "string"},
+          "briefing_summary": {"type": "string"},
+          "exposure_summary": {
+            "type": "object",
+            "properties": {
+              "total_policies": {"type": "number"},
+              "total_insured_value": {"type": "string"},
+              "concentration_score": {"type": "number"},
+              "yoy_growth": {"type": "string"}
+            },
+            "required": ["total_policies", "total_insured_value", "concentration_score", "yoy_growth"],
+            "additionalProperties": false
+          },
+          "lob_breakdown": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "line_of_business": {"type": "string"},
+                "percentage": {"type": "number"},
+                "insured_value": {"type": "string"}
+              },
+              "required": ["line_of_business", "percentage", "insured_value"],
+              "additionalProperties": false
+            }
+          },
+          "intermediary_concentration": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "percentage": {"type": "number"}
+              },
+              "required": ["name", "percentage"],
+              "additionalProperties": false
+            }
+          },
+          "threshold_breaches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "metric": {"type": "string"},
+                "current_value": {"type": "string"},
+                "threshold": {"type": "string"},
+                "status": {"type": "string"}
+              },
+              "required": ["metric", "current_value", "threshold", "status"],
+              "additionalProperties": false
+            }
+          },
+          "current_threats": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "threat_name": {"type": "string"},
+                "severity": {"type": "string"},
+                "description": {"type": "string"}
+              },
+              "required": ["threat_name", "severity", "description"],
+              "additionalProperties": false
+            }
+          },
+          "remedial_actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "priority": {"type": "number"},
+                "action": {"type": "string"},
+                "rationale": {"type": "string"},
+                "urgency": {"type": "string"}
+              },
+              "required": ["priority", "action", "rationale", "urgency"],
+              "additionalProperties": false
+            }
+          },
+          "historical_context": {"type": "string"},
+          "risk_appetite_status": {"type": "string"},
+          "analysis_timestamp": {"type": "string"}
+        },
+        "required": ["severity_level", "geography", "briefing_summary", "exposure_summary", "lob_breakdown", "intermediary_concentration", "threshold_breaches", "current_threats", "remedial_actions", "historical_context", "risk_appetite_status", "analysis_timestamp"],
+        "additionalProperties": false
+      }
+    }
+  }
+}
